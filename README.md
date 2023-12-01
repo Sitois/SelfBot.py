@@ -1,2 +1,2 @@
 # SelfBot.py
-My Discord SelfBot (only for educational reason)
+Discord SelfBot (use only for educational reason)

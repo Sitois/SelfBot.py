@@ -10,6 +10,10 @@
   <img src="https://media.discordapp.net/attachments/1155452222713364600/1180837687922528307/jKrhW6O.png?ex=657edfcb&is=656c6acb&hm=4e2d17733ff6703ae34fbd6cc98590bc97a84601168721080bc3421e66abd578&=&quality=lossless&width=852&height=427" alt="SelfBot Main Menu" width="" height="">
 </div>
 
+<div align="center">
+  <img src="https://media.discordapp.net/attachments/1155452222713364600/1180880449422246009/OI91bMQ.png?ex=657f079e&is=656c929e&hm=540cb22ab4606fdffcaf90cc91ad1eb7f56a6b6a831b61f84f97e819d7b739cf&=&quality=lossless&width=852&height=427" alt="SelfBot Command Menu" width="" height="">
+</div>
+
 ## 📒| Table des matières
 
 1. [💾| Installation](#💾-installation)

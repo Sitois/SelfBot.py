@@ -1,4 +1,4 @@
-[![wakatime](https://wakatime.com/badge/user/66b6796d-eb84-4bb9-b9d2-8dc882f4c6ac.svg)](https://wakatime.com/@66b6796d-eb84-4bb9-b9d2-8dc882f4c6ac)
+[![wakatime](https://wakatime.com/badge/user/66b6796d-eb84-4bb9-b9d2-8dc882f4c6ac.svg)](https://wakatime.com/@018af69f-9d50-4699-932d-026a9efb0401)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Sitois/SelfBot.py.svg)](https://github.com/Sitois/SelfBot.py/releases)
 [![GitHub downloads](https://img.shields.io/github/downloads/Sitois/SelfBot.py/total.svg)](https://github.com/Sitois/SelfBot.py/releases)
 [![GitHub stars](https://img.shields.io/github/stars/Sitois/SelfBot.py.svg)](https://github.com/Sitois/SelfBot.py/stargazers)

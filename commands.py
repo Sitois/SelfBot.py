@@ -206,13 +206,6 @@ def detecter_message():
                 ressources_commands.modifier_message(channel_id, f"{config_commands.reponse_quatre}", dernier_message_id)
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")
-            elif message["content"].lower().startswith(f"quoi"):
-                dernier_message_id = message["id"]
-                message_id_log.append(dernier_message_id)
-                if config_commands.feur == True:
-                    ressources_commands.envoyer_message(channel_id, f"feur !!!! xdxd") 
-                else:
-                    1 + 1 
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.commande_cinq}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)

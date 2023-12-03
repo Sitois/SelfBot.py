@@ -10,6 +10,8 @@ try:
     import time
     import ressources
     import fr_en
+    from hugchat import hugchat
+    from hugchat.login import Login
 except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", '-r' , 'requirements.txt'])
     import os
@@ -22,6 +24,8 @@ except ImportError:
     import time
     import ressources
     import fr_en
+    from hugchat import hugchat
+    from hugchat.login import Login
 
 
 
@@ -81,7 +85,7 @@ reset_color = Style.RESET_ALL
 
 
 
-print(magenta + "                       The only Self-Bot that can be... uhh... idk ! ", reset_color)
+print(magenta + "                       The only Self-Bot that is easy to use !", reset_color)
 print("")
 print(blue + "                       Made by someone ! ", reset_color)
 print("")

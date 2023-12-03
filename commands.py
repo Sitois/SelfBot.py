@@ -193,9 +193,10 @@ def detecter_message():
                 ressources_commands.modifier_message(channel_id, f"{config_commands.reponse_deux}", dernier_message_id)
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")
-            elif message["content"].lower() == f"{config_commands.prefix}{config_commands.commande_trois}" and message["author"]["id"] in config_commands.account_id:
+            elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.commande_trois}") and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
+                message_content = message["content"][len(f"{config_commands.prefix}{config_commands.commande_trois}"):]
                 ressources_commands.modifier_message(channel_id, f"{config_commands.reponse_trois}", dernier_message_id)
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")           
@@ -204,7 +205,14 @@ def detecter_message():
                 message_id_log.append(dernier_message_id)
                 ressources_commands.modifier_message(channel_id, f"{config_commands.reponse_quatre}", dernier_message_id)
                 if config_commands.debug_mode == True:
-                    ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")            
+                    ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")
+            elif message["content"].lower().startswith(f"quoi"):
+                dernier_message_id = message["id"]
+                message_id_log.append(dernier_message_id)
+                if config_commands.feur == True:
+                    ressources_commands.envoyer_message(channel_id, f"feur !!!! xdxd") 
+                else:
+                    1 + 1 
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.commande_cinq}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
@@ -221,32 +229,52 @@ def detecter_message():
                 ressources_commands.modifier_message(channel_id, random.choice(poetry[config.langue]), message_id_log)
                 time.sleep(0.5)
                 if config_commands.debug_mode == True:
-                    ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")             
+                    ressources_commands.notifier(f"<@{config_commands.account_id[0]}> command: : {nitro_content}")             
             elif message["content"].lower().startswith(f"https://discord.gift/"):
                 dernier_message_id = message["id"]
                 if config_commands.nitro_toggle == True:
-                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id}> Nitro : {nitro_content}")
+                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id[0]}> Nitro : {nitro_content}")
             elif message["content"].lower().startswith(f"discord.gift/"):
                 dernier_message_id = message["id"]
                 if config_commands.nitro_toggle == True:
                     nitro_content = message["content"]
-                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id}> Nitro : {nitro_content}")
+                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id[0]}> Nitro : {nitro_content}")
             elif message["content"].lower().startswith("discord.com/gift/"):
                 dernier_message_id = message["id"]
                 if config_commands.nitro_toggle == True:
                     nitro_content = message["content"]
-                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id}> Nitro : {nitro_content}")
+                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id[0]}> Nitro : {nitro_content}")
             elif message["content"].lower().startswith(f"https://discord.com/gift/"):
                 dernier_message_id = message["id"]
                 if config_commands.nitro_toggle == True:
                     nitro_content = message["content"]
-                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id}> Nitro : {nitro_content}")
+                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id[0]}> Nitro : {nitro_content}")
             elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.add_channel}") and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
-                new_channel = message["content"][len(f"{config_commands.prefix}{config_commands.add_channel}"):]
-                list_custom_channel.append(new_channel.strip())
-                ressources_commands.modifier_message(channel_id, f"✅| Channel successfully added. (<#{new_channel.strip()}>)", dernier_message_id)
+                if len(list_custom_channel) < 5:
+                        new_channel = message["content"][len(f"{config_commands.prefix}{config_commands.add_channel}"):]
+                        if len(new_channel.strip()) == 19:
+                            if new_channel in list_custom_channel:
+                                    ressources_commands.modifier_message(channel_id, f"❌| Ce salon a déjà été défini !", dernier_message_id)
+                            else:
+                                    list_custom_channel.append(new_channel.strip())
+                                    ressources_commands.modifier_message(channel_id, f"✅| Channel successfully added. (<#{new_channel.strip()}>)", dernier_message_id)
+                        else:
+                            ressources_commands.modifier_message(channel_id, f"❌| Incorrect Channel ID.", dernier_message_id)
+                else:
+                    ressources_commands.modifier_message(channel_id, f"🔴| Salons complet ! (faites `{config_commands.prefix}{config_commands.del_channel}` pour supprimer la liste des salons !)", dernier_message_id)
+                if config_commands.debug_mode == True:
+                    ressources_commands.notifier(f"<@{config_commands.account_id}> command: {nitro_content}")
+            elif message["content"].lower() == f"{config_commands.prefix}{config_commands.list_channel}" and message["author"]["id"] in config_commands.account_id:
+                dernier_message_id = message["id"]
+                message_id_log.append(dernier_message_id)
+                if len(list_custom_channel) > 0:
+                    ressources_commands.modifier_message(salon=channel_id, texte=f"__**📔| Channel Dashboard :**__ {list_custom_channel}", message_id=dernier_message_id)
+                else:
+                    ressources_commands.modifier_message(channel_id, rf"""__**📔| Channel Dashboard :**__
+❌| No channel.""", dernier_message_id)
+
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: {nitro_content}")
             elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.del_channel}") and message["author"]["id"] in config_commands.account_id:
@@ -267,7 +295,7 @@ def detecter_message():
 
   🏮| __**GENERAL:**__
   __Prefix:__ `{config_commands.prefix}`,  {fr_en_commands.ai_for_all_boo[config.langue]}: `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.ai_for_all == True else f'{fr_en_commands.false_bool[config.langue]}'}`
-  __**Add_Channel:**__ `{config_commands.add_channel}`, Channel Counter: `{len(list_custom_channel)}`
+  __**Add_Channel:**__ `{config_commands.add_channel}`, Channel Counter: `{len(list_custom_channel)}`, Channel List: `{config_commands.prefix}{config_commands.list_channel}`, Delete Channel: `{config_commands.prefix}{config_commands.del_channel}`
   __**Nitro Sniper**__ : `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.nitro_toggle == True else f'{fr_en_commands.false_bool[config.langue]}'}` ,  **{fr_en_commands.info_channel[config.langue]} {config_commands.notifier_channel_id}(<#{config_commands.notifier_channel_id}>)**
   __**{fr_en_commands.ai_command_help[config.langue]}:**__ `{config_commands.prefix}{config_commands.commande_ai}`,  IsNitro : `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.is_nitro == 3900 else f'{fr_en_commands.false_bool[config.langue]}'}`
   __**{fr_en_commands.clear_ai_help[config.langue]} :**__ `{config_commands.prefix}{config_commands.commande_ia_clear}`

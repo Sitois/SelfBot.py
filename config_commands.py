@@ -43,6 +43,7 @@ commande_ai = "ai"
 # fr: Supprime toutes les conversations avec l'IA.
 commande_ia_clear = "suppr"
 # fr: Si vous possédez Nitro entrez ici 3900, si vous ne possédez pas nitro, entrez ici 1900.
+# en: If you have Nitro, enter here 3900, if not enter here 1900.
 is_nitro = 3900
 # fr: Identifiants et mot de passe pour la commande -ai.
 # en: Email and Password for the ai command.
@@ -65,7 +66,8 @@ nitro_toggle = False # True / False
 # fr: Salon où le Nitro sera envoyé. (il est recommendé d'entrer un salon privé (mp / dm))
 # en: Channel ID for the Nitro Sniper. (recommended: an dm channel id.)
 notifier_channel_id = ""
-# Notifier Account
+# en: Notifier Account Token
+# fr: Token du compte notificateur.
 notifier_token = ""
 
 
@@ -74,27 +76,34 @@ notifier_token = ""
 clear_command = "clear"
 #
 clear_definition = "Clear messages. (Max:"
-# Nombre maximum de clear ( RECOMMendée : 15 ) (PLUS LE NOMBRE EST HAUT, PLUS VOTRE COMPTE A DE CHANCE DE SE FAIRE BANNIR)
+# fr: Nombre maximum de clear ( RECOMMendée : 15 ) (PLUS LE NOMBRE EST HAUT, PLUS VOTRE COMPTE A DE CHANCE DE SE FAIRE BANNIR)
+# en: Max message amount. (recommended: 15) (more the amount is big, more you account can get banned)
 max_clear = 15
 
 # fr: Nom de la commande QUI ENVERRA UNE PHOTO DE CHAT  (fonctionne seulement avec votre ID)
 # en: Name of the command THAT WILL SEND A CAT PICTURE (work only with your ID)
 cat_command = "cat"
-# Description de la commande
+# fr: Descriptiond de la comande
+# en: Command Description
 cat_definition = "Send a cat picture."
 
 
-# Nom de la seconde commande QUI ENVERRA UN FAUX NITRO (fonctionne seulement avec votre ID)
+# fr: Nom de la commande QUI ENVERRA UN Faux Nitro (fonctionne seulement avec votre ID)
+# en: Name of the command THAT WILL SEND A FAKE NITRO (work only with your ID)
 nitro_command = "fakenitro"
-# Description de la commande
+# fr: Descriptiond de la comande
+# en: Command Description
 nitro_definition = "Send a FakeNitro"
 
 
-# Nom de la quatrième commande (préféré pour raccourcir la commande d'un snipe), (fonctionne seulement avec votre ID)
+# fr: Nom de la commade pour raccourcir un snipe.
+# en: Name of the command for Snipe.
 snipe_command = "snipe"
-# Nom de votre commande de snipe.
+# fr: Nom de la commande de snipe.
+# en: Name of the result (your snipe comand)
 snipe_answer = "~iesnipe"
-# Description de la commande
+# fr: Descriptiond de la comande
+# en: Command Description
 snipe_definition = "Snipe."
 
 
@@ -102,37 +111,52 @@ snipe_definition = "Snipe."
 """fr: COMMANDES PERZSONNALISéES
    en: CUSTOM COMMANDS"""
 
-# Nom de la commande (fonctionne seulement avec votre ID)
+# fr: Nom de la première commande. (fonctionne seulement avec votre ID)
+# en: Name of the first command. (only work with your ID)
 commande_un = ""
-# Réponse de la troisième commande
+# fr: Réponse de la première commande. (fonctionne seulement avec votre ID)
+# en: Answer of the first command. (only work with your ID)
 reponse_un = ""
-# fr: Définition de la commande
+# fr: Descriptiond de la comande
+# en: Command Description
 un_definition =""
 
-# Nom de la deuxième commande (fonctionne seulement avec votre ID)
+# fr: Nom de la deuxième commande. (fonctionne seulement avec votre ID)
+# en: Name of the second command. (only work with your ID)
 commande_deux = ""
-# Réponse de la deuxième commande
+# fr: Réponse de la deuxième commande. (fonctionne seulement avec votre ID)
+# en: Answer of the second command. (only work with your ID)
 reponse_deux = ""
-#
+# fr: Descriptiond de la comande
+# en: Command Description
 deux_definition =""
 
-# Nom de la cinquième commande (fonctionne seulement avec votre ID)
+# fr: Nom de la troisième commande. (fonctionne seulement avec votre ID)
+# en: Name of the third command. (only work with your ID)
 commande_trois = ""
-# Réponse de la cinquième commande
+# fr: Réponse de la troisième commande. (fonctionne seulement avec votre ID)
+# en: Answer of the third command. (only work with your ID)
 reponse_trois = ""
-# Definition
+# fr: Descriptiond de la comande
+# en: Command Description
 trois_definition =""
 
-# Nom de la quatrième commande (fonctionne seulement avec votre ID)
+# fr: Nom de la quatrième commande. (fonctionne seulement avec votre ID)
+# en: Name of the fourth command. (only work with your ID)
 commande_quatre = ""
-# Réponse de la quatrième commande
+# fr: Réponse de la quatrième commande. (fonctionne seulement avec votre ID)
+# en: Answer of the fourth command. (only work with your ID)
 reponse_quatre = ""
-#
+# fr: Descriptiond de la comande
+# en: Command Description
 quatre_definition =""
 
-# Nom de la quatrième commande (fonctionne seulement avec votre ID)
+# fr: Nom de la cinquième commande. (fonctionne seulement avec votre ID)
+# en: Name of the fifth command. (only work with your ID)
 commande_cinq = ""
-# Réponse de la quatrième commande
+# fr: Réponse de la quatrième commande. (fonctionne seulement avec votre ID)
+# en: Answer of the fifth command. (only work with your ID)
 reponse_cinq = ""
-#
+# fr: Descriptiond de la comande
+# en: Command Description
 cinq_definition =""

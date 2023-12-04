@@ -157,3 +157,15 @@ command_wait = {
    "fr": "En l'attente de commande...",
    "en": "Waiting for commands..."
 }
+
+
+error_message = {
+    "fr": "Erreur lors de l'envoi du message.",
+    "en": "An error has occured while sending the message."
+}
+
+error_code = {
+    "fr": "Code d'erreur : ",
+    "en": "Error code : "
+}
+

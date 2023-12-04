@@ -24,22 +24,31 @@ help_definition = "Send the help of the SelfBot."
 
 #
 eval_command = "eval"
-# DO NOT ENTER "True" unless you are aware of the risks (eval command allows you to execute arbitrary code)
+# en: DO NOT ENTER "True" unless you are aware of the risks (eval command allows you to execute arbitrary code to your machine; never run a script unless you know what it does)
+# fr: NE PAS ENTRER "True" sauf si vous êtes en connaissance de risque (la commande eval permet d'éxécuter du code arbitraire sur votre machine; ne jamais lancer un script sauf si vous savez ce qu'il fait)
 eval_toggle = False
 
-# ai
+# ai part
 commande_ai = "ai"
-#
+# en: Delete all your conversations with the AI.
+# fr: Supprime toutes les conversations avec l'IA.
 commande_ia_clear = "suppr"
 # fr: Si vous possédez Nitro entrez ici 3900, si vous ne possédez pas nitro, entrez ici 1900.
 is_nitro = 3900
 # fr: Identifiants et mot de passe pour la commande -ai.
+# en: Email and Password for the ai command.
 hug_chat_email = ""
 hug_chat_password = ""
-#
+# fr: RECOMMENDé: "False"; Permet à n'importe qui d'utiliser la commande IA.
+# en: RECOMMENDED: "False"; Allow everyone to use the AI command.
 ai_for_all = False # True / False
-#
+# fr: langue dans laquelle l'IA dois vous répondre.
+# en: Language for the AI answer.
 language_ai = "english"
+
+# fr: Commande pour transformer l'ID de l'utilisateur en DéBUT de son token (converti son ID en base 64)
+# en: Command to transform the user's ID into the START of his token (convert the ID into base 64)
+token_to_id = "tok"
 
 # fr: Activé NitroSniper (True = oui et False = non)
 # en: Enable NitroSniper (True = yes and False = no)

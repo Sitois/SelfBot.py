@@ -36,6 +36,8 @@ eval_command = "eval"
 eval_toggle = False
 
 # AI PART:
+
+# fr: Commande
 commande_ai = "ai"
 # en: Delete all your conversations with the AI.
 # fr: Supprime toutes les conversations avec l'IA.

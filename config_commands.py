@@ -1,17 +1,22 @@
 debug_mode = False # (beta)
 """CONFIG  GENERAL COMMANDES"""
-# Token du compte pour les commandes.
+# fr: Token du compte pour les commandes.
+# en: Account Token for commands
 commands_token = ""
-# Votre ID du compte qui éxécutera les commandes.
+# fr: Votre ID de compte
+# en: Account ID
 account_id = [""]
-# ID du salon par défaut (vous pourrez ajouter d'autre salon en fesant: la commande en-dessous et l'id du salon. )
+# fr: ID du salon par défaut (vous pourrez ajouter d'autre salon en fesant: add [salon_id])
+# en: Default Command Channel ID (you can add other channel with the -add [channel_id] command.)
 CHANNEL_ID = "" # Laisser vide pour avoir la demande au démarrage.
-add_channel = "add"
-del_channel = "del"
-list_channel = "list"
-# Prefix des commandes
+add_channel = "add" # fr: Commande pour ajouter un salon avec son ID. / en: Add Channel Command.
+del_channel = "del" # fr: Commande pour supprimer le dernier salon ajouté. / en: Delete Channel Command (Delete the last channel)
+list_channel = "list" # fr: Comamnde pour voir la liste des salons. / en: Channel List Command
+# fr: Prefix des commandes
+# en: Commands Prefix
 prefix = "-"
-#
+# fr: Commande danger. (modifie tout les messages auquel le selfbot a répondu.)
+# en: Alert command. (edit all messages to which the selfbot has replied.)
 commande_aled = "danger"
 
 
@@ -19,16 +24,18 @@ commande_aled = "danger"
 # fr: Nom de la commande QUI ENVERRA LE MESSAGE D'AIDE  (fonctionne seulement avec votre ID)
 # en: Name of the command THAT WILL SEND THE HELP (work only with your ID)
 commande_help = "help"
-# Description de la commande
+# fr: Description de la commande
+# en: Command Description
 help_definition = "Send the help of the SelfBot."
 
-#
+# fr: Commande Eval.
+# en: Eval Command.
 eval_command = "eval"
 # en: DO NOT ENTER "True" unless you are aware of the risks (eval command allows you to execute arbitrary code to your machine; never run a script unless you know what it does)
 # fr: NE PAS ENTRER "True" sauf si vous êtes en connaissance de risque (la commande eval permet d'éxécuter du code arbitraire sur votre machine; ne jamais lancer un script sauf si vous savez ce qu'il fait)
 eval_toggle = False
 
-# ai part
+# AI PART:
 commande_ai = "ai"
 # en: Delete all your conversations with the AI.
 # fr: Supprime toutes les conversations avec l'IA.

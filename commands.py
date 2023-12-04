@@ -357,7 +357,7 @@ def detecter_message():
                 ai_ask = message["content"][len(f"{config_commands.prefix}{config_commands.commande_ai}"):]
                 ressources_commands.modifier_message(channel_id, f"⌚| wait...", dernier_message_id)
                 query_result = chatbot.query(f"{ai_ask}")
-                ressources_commands.modifier_message(channel_id, fr"""❓| Question: {ai_ask}
+                ressources_commands.modifier_message(channel_id, fr"""❓| Question: {ai_ask.strip()}
 ✅| Réponse: {query_result}""", dernier_message_id)
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")    

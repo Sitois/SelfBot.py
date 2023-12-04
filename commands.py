@@ -8,7 +8,7 @@ import ressources_commands
 import fr_en_commands
 from hugchat import hugchat
 from hugchat.login import Login
-
+import base64
 
 
 
@@ -199,7 +199,16 @@ def detecter_message():
                 message_content = message["content"][len(f"{config_commands.prefix}{config_commands.commande_trois}"):]
                 ressources_commands.modifier_message(channel_id, f"{config_commands.reponse_trois}", dernier_message_id)
                 if config_commands.debug_mode == True:
-                    ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")           
+                    ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")
+            elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.token_to_id}") and message["author"]["id"] in config_commands.account_id:
+                dernier_message_id = message["id"]
+                message_id_log.append(dernier_message_id)
+                id = message["content"][len(f"{config_commands.prefix}{config_commands.token_to_id}"):]
+                id = id.strip()
+                encode_text = base64.b64encode(id.encode('utf-8'))
+                ressources_commands.modifier_message(channel_id, f"🌠| Résultat: `{encode_text.strip()}`", dernier_message_id)
+                if config_commands.debug_mode == True:
+                    ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.commande_quatre}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)

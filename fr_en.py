@@ -169,3 +169,7 @@ error_code = {
     "en": "Error code : "
 }
 
+message_code_error = {
+    "fr": "Message d'erreur : ",
+    "en": "Error messsage : "
+}

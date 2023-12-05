@@ -94,7 +94,7 @@ def fake_nitro(token, CHANNEL_ID):
   if response.status_code == 200:
       print(green + f'FakeNitro envoyé avec succès !', reset_color)
   else:
-      print(red + fr_en.error_message[config.langue] + fr_en.error_code[config.langue], response.status_code, "Message d'erreur :", response.text, reset_color)
+      print(red + fr_en.error_message[config.langue] + fr_en.error_code[config.langue], response.status_code, fr_en.message_code_error[config.langue], response.text, reset_color)
 
 def changer_statut(token, statut):
      headers = {

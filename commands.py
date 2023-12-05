@@ -9,7 +9,7 @@ import fr_en_commands
 from hugchat import hugchat
 from hugchat.login import Login
 import base64
-
+from datetime import datetime
 
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']

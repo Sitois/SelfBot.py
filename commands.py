@@ -9,7 +9,7 @@ import fr_en_commands
 from hugchat import hugchat
 from hugchat.login import Login
 import base64
-from datetime import datetime
+
 
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -363,14 +363,17 @@ def detecter_message():
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")    
             elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.commande_ai}") and not message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
-                message_id_log.append(dernier_message_id)
                 if config_commands.ai_for_all == True:
+                    message_id_log.append(dernier_message_id)
+                    sign = Login(config_commands.hug_chat_email, config_commands.hug_chat_password)
+                    cookies = sign.login()
+                    chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
                     ai_ask = message["content"][len(f"{config_commands.prefix}{config_commands.commande_ai}"):]
                     ressources_commands.envoyer_message(channel_id, f"⌚| wait...")
                     query_result = chatbot.query(f"{ai_ask}")
                     ressources_commands.supprimer_messages(channel_id, 1)
                     ressources_commands.envoyer_message(channel_id, fr"""❓| Question: {ai_ask}
-✅| Réponse: {query_result.text}""")
+✅| Réponse: {query_result}""")
                     if config_commands.debug_mode == True:
                        ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")            
             elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.clear_command}") and message["author"]["id"] in config_commands.account_id:

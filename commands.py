@@ -136,7 +136,7 @@ else:
     1 + 1
 
 print(Fore.LIGHTGREEN_EX + "---------")
-print(Fore.LIGHTYELLOW_EX, "Log :")
+print(Fore.LIGHTYELLOW_EX, "Logs :")
 Fore.LIGHTCYAN_EX
 
 dernier_message_id = None

@@ -27,7 +27,11 @@ commande_help = "help"
 # fr: Description de la commande
 # en: Command Description
 help_definition = "Send the help of the SelfBot."
-
+# fr: Commande pour Menu d'Aide.
+# en: Command for the Help Menu.
+general_help_command = "general"
+perso_help_command = "custom"
+danger_help_command = "aled"
 # fr: Commande Eval.
 # en: Eval Command.
 eval_command = "eval"

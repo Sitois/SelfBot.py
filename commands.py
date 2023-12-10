@@ -9,7 +9,7 @@ import fr_en_commands
 from hugchat import hugchat
 from hugchat.login import Login
 import base64
-
+from datetime import datetime
 
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -265,14 +265,37 @@ def detecter_message():
                         else:
                             ressources_commands.modifier_message(channel_id, f"❌| Incorrect Channel ID.", dernier_message_id)
                 else:
-                    ressources_commands.modifier_message(channel_id, f"🔴| Salons complet ! (faites `{config_commands.prefix}{config_commands.del_channel}` pour supprimer la liste des salons !)", dernier_message_id)
+                    ressources_commands.modifier_message(channel_id, f"🔴| Salons complet ! (faites `{config_commands.prefix}{config_commands.del_channel}` pour supprimer le dernier salon de la liste des salons !)", dernier_message_id)
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: {nitro_content}")
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.list_channel}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
-                if len(list_custom_channel) > 0:
-                    ressources_commands.modifier_message(salon=channel_id, texte=f"__**📔| Channel Dashboard :**__ {list_custom_channel}", message_id=dernier_message_id)
+                if len(list_custom_channel) == 1:
+                    ressources_commands.modifier_message(salon=channel_id, texte=fr"""__**📔| Channel Dashboard :**__ 
+🧶| 1. <#{list_custom_channel[0]}>""", message_id=dernier_message_id)
+                elif len(list_custom_channel) == 2:
+                    ressources_commands.modifier_message(salon=channel_id, texte=rf"""__**📔| Channel Dashboard :**__ 
+🧶| 1. <#{list_custom_channel[0]}>
+🧵| 2. <#{list_custom_channel[1]}>""", message_id=dernier_message_id)
+                elif len(list_custom_channel) == 3:
+                    ressources_commands.modifier_message(salon=channel_id, texte=rf"""__**📔| Channel Dashboard :**__ 
+🧶| 1. <#{list_custom_channel[0]}>
+🧵| 2. <#{list_custom_channel[1]}>
+🪡| 3. <#{list_custom_channel[2]}>""", message_id=dernier_message_id)
+                elif len(list_custom_channel) == 4:
+                    ressources_commands.modifier_message(salon=channel_id, texte=rf"""__**📔| Channel Dashboard :**__ 
+🧶| 1. <#{list_custom_channel[0]}>
+🧵| 2. <#{list_custom_channel[1]}>
+🪡| 3. <#{list_custom_channel[2]}>
+🪢| 4. <#{list_custom_channel[3]}>""", message_id=dernier_message_id)
+                elif len(list_custom_channel) == 5:
+                    ressources_commands.modifier_message(salon=channel_id, texte=rf"""__**📔| Channel Dashboard :**__ 
+🧶| 1. <#{list_custom_channel[0]}>
+🧵| 2. <#{list_custom_channel[1]}>
+🪡| 3. <#{list_custom_channel[2]}>
+🪢| 4. <#{list_custom_channel[3]}>
+🎟️| 5. <#{list_custom_channel[4]}>""", message_id=dernier_message_id)
                 else:
                     ressources_commands.modifier_message(channel_id, rf"""__**📔| Channel Dashboard :**__
 ❌| No channel.""", dernier_message_id)
@@ -291,18 +314,30 @@ def detecter_message():
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: {nitro_content}")
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.commande_help}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
+                message_id_log.append(dernier_message_id) # ☀ 
+                ressources_commands.modifier_message(channel_id, rf'''☄ __**SelfBot.py, *Clint(Self)Bot*  :**__ ☄
+  ☄ "{random.choice(poetry[config.langue])}" ☄
+  
+  🏮| __**GENERAL:**__: `{config_commands.prefix}{config_commands.general_help_command}`
+  🌠| __**{fr_en_commands.part_two_help[config.langue]}:**__ `{config_commands.prefix}{config_commands.perso_help_command}`
+  ☣️| __**DANGER ZONE:**__ `{config_commands.prefix}{config_commands.danger_help_command}`''', dernier_message_id)
+            elif message["content"].lower() == f"{config_commands.prefix}{config_commands.general_help_command}" and message["author"]["id"] in config_commands.account_id:
+                dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
-                ressources_commands.modifier_message(channel_id, rf'''꡴ __**SelfBot.py, *Clint(Self)Bot*  :**__ ꡴
-  ꡴ "{random.choice(poetry[config.langue])}" ꡴
-
+                ressources_commands.modifier_message(channel_id, rf'''☄ __**SelfBot.py, *Clint(Self)Bot*  :**__ ☄:
+                                                     
   🏮| __**GENERAL:**__
   __Prefix:__ `{config_commands.prefix}`,  {fr_en_commands.ai_for_all_boo[config.langue]}: `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.ai_for_all == True else f'{fr_en_commands.false_bool[config.langue]}'}`
-  __**Add_Channel:**__ `{config_commands.add_channel}`, Channel Counter: `{len(list_custom_channel)}`, Channel List: `{config_commands.prefix}{config_commands.list_channel}`, Delete Channel: `{config_commands.prefix}{config_commands.del_channel}`
-  __**Nitro Sniper**__ : `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.nitro_toggle == True else f'{fr_en_commands.false_bool[config.langue]}'}` ,  **{fr_en_commands.info_channel[config.langue]} {config_commands.notifier_channel_id}(<#{config_commands.notifier_channel_id}>)**
+  __**Add_Channel:**__ `{config_commands.prefix}{config_commands.add_channel}`, Channel Counter: `{len(list_custom_channel)}`, Channel List: `{config_commands.prefix}{config_commands.list_channel}`, Delete Channel: `{config_commands.prefix}{config_commands.del_channel}`
+  __**Nitro Sniper**__ : `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.nitro_toggle == True else f'{fr_en_commands.false_bool[config.langue]}'}` ,  **{fr_en_commands.info_channel[config.langue]} <#{config_commands.notifier_channel_id}>**
   __**{fr_en_commands.ai_command_help[config.langue]}:**__ `{config_commands.prefix}{config_commands.commande_ai}`,  IsNitro : `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.is_nitro == 3900 else f'{fr_en_commands.false_bool[config.langue]}'}`
   __**{fr_en_commands.clear_ai_help[config.langue]} :**__ `{config_commands.prefix}{config_commands.commande_ia_clear}`
-  __**Clear:**__ `{config_commands.prefix}{config_commands.clear_command}` (__Max:__ __{config_commands.max_clear}__)
-
+  __**Clear:**__ `{config_commands.prefix}{config_commands.clear_command}` (__Max:__ __{config_commands.max_clear}__)''', dernier_message_id)
+            elif message["content"].lower() == f"{config_commands.prefix}{config_commands.perso_help_command}" and message["author"]["id"] in config_commands.account_id:
+                dernier_message_id = message["id"]
+                message_id_log.append(dernier_message_id)
+                ressources_commands.modifier_message(channel_id, rf'''☄ __**SelfBot.py, *Clint(Self)Bot*  :**__ ☄
+                                                     
   🌠| __**{fr_en_commands.part_two_help[config.langue]}:**__
   **{config_commands.prefix}{config_commands.commande_help}**: {config_commands.help_definition}
   **{config_commands.prefix}{config_commands.cat_command}**: {config_commands.cat_definition}
@@ -312,11 +347,15 @@ def detecter_message():
   **{config_commands.prefix}{config_commands.commande_deux}**: {config_commands.deux_definition}
   **{config_commands.prefix}{config_commands.commande_trois}**: {config_commands.trois_definition}
   **{config_commands.prefix}{config_commands.commande_quatre}**: {config_commands.quatre_definition}
-  **{config_commands.prefix}{config_commands.commande_cinq}**: {config_commands.cinq_definition}
-
+  **{config_commands.prefix}{config_commands.commande_cinq}**: {config_commands.cinq_definition}''', dernier_message_id)
+            elif message["content"].lower() == f"{config_commands.prefix}{config_commands.danger_help_command}" and message["author"]["id"] in config_commands.account_id:
+                dernier_message_id = message["id"]
+                message_id_log.append(dernier_message_id)
+                ressources_commands.modifier_message(channel_id, rf'''☄ __**SelfBot.py, *Clint(Self)Bot*  :**__ ☄
+  
   ☣️| __**DANGER ZONE:**__
-  Eval Command: `{config_commands.prefix}{config_commands.eval_command}`,  IsEnabled: `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.eval_toggle == True else f"{fr_en_commands.false_bool[config.langue]}"}`
-  ''', dernier_message_id)
+  Danger Command: `{config_commands.prefix}{config_commands.commande_aled}`
+  Eval Command: `{config_commands.prefix}{config_commands.eval_command}`,  IsEnabled: `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.eval_toggle == True else f"{fr_en_commands.false_bool[config.langue]}"}`''', dernier_message_id)
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.commande_ia_clear}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id) 
@@ -364,7 +403,6 @@ def detecter_message():
             elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.commande_ai}") and not message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 if config_commands.ai_for_all == True:
-                    message_id_log.append(dernier_message_id)
                     sign = Login(config_commands.hug_chat_email, config_commands.hug_chat_password)
                     cookies = sign.login()
                     chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
@@ -372,7 +410,7 @@ def detecter_message():
                     ressources_commands.envoyer_message(channel_id, f"⌚| wait...")
                     query_result = chatbot.query(f"{ai_ask}")
                     ressources_commands.supprimer_messages(channel_id, 1)
-                    ressources_commands.envoyer_message(channel_id, fr"""❓| Question: {ai_ask}
+                    ressources_commands.envoyer_message(channel_id, fr"""❓| Question: {ai_ask.strip()}
 ✅| Réponse: {query_result}""")
                     if config_commands.debug_mode == True:
                        ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")            

@@ -22,6 +22,8 @@
 
 3. [🟢| Statut du Projet](#🟢-statut-du-projet)
 
+4. [🫂| Contribuer au Projet](#🫂-comment-contribuer-au-projet)
+
 ## 💾| Installation
 Téléchargez la dernière version du SelfBot.
 Lancer ```main.py```.  Les modules nécessaires se téléchargeront automatiquement au démarrage s'il ne sont pas présent.
@@ -35,3 +37,8 @@ Rendez-vous dans le fichier ```config_commands.py```, entrez le token et l'ID ; 
 
 ## 🟢| Statut du Projet:
 🟢| Encore mis à jour régulièrement.
+
+## 🫂| Comment contribuer au Projet:
+🌟 N'oubliez pas de laisser une étoile !
+
+🌟 Don't forget to leave a star !

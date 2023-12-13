@@ -234,6 +234,12 @@ def detecter_message():
                 time.sleep(0.5)
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id[0]}> command: : {nitro_content}")             
+            elif message["content"].lower() == f"{config_commands.prefix}{config_commands.stop_command}" and message["author"]["id"] in config_commands.account_id:
+                dernier_message_id = message["id"]
+                ressources_commands.modifier_message(channel_id, f"🌠| __**Clint(Self)Bot:**__ arrêt...", dernier_message_id)
+                time.sleep(0.6)
+                ressources_commands.modifier_message(channel_id, f"{random.choice(poetry[config.langue])}", dernier_message_id)
+                exit()
             elif message["content"].lower().startswith(f"https://discord.gift/"):
                 dernier_message_id = message["id"]
                 if config_commands.nitro_toggle == True:

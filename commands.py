@@ -227,7 +227,9 @@ def detecter_message():
                 for element in message_id_log:
                     ressources_commands.modifier_message(channel_id, random.choice(poetry[config.langue]), element)
                     time.sleep(0.8)
-                print("supression de tout les messages...")
+                for i in range(len(message_id_log)):
+                    message_id_log.pop()
+                print("Danger Command. Cleared messages.")
                 ressources_commands.modifier_message(channel_id, random.choice(poetry[config.langue]), message_id_log)
                 time.sleep(0.5)
                 if config_commands.debug_mode == True:
@@ -371,15 +373,19 @@ def detecter_message():
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
                 message_content =  message["content"][len(f"{config_commands.prefix}{config_commands.eval_command}"):]
+                message_content = message_content.strip()
                 if config_commands.eval_toggle == True:
-                    try:
-                      eval_result = eval(message_content)
-                      ressources_commands.modifier_message(channel_id, rf"""✅| Success:
+                    if message_content == f"exit()":
+                        ressources_commands.modifier_message(channel_id, f"❌| __Error__: Use __**{config_commands.prefix}{config_commands.stop_command}**__ instead.", dernier_message_id)
+                    else:
+                        try:
+                           eval_result = eval(message_content)
+                           ressources_commands.modifier_message(channel_id, rf"""✅| Success:
 ```py
 {eval_result}
 ```""", dernier_message_id)
-                    except Exception as e:
-                        ressources_commands.modifier_message(channel_id, rf"""❌| An error has occured:
+                        except Exception as e:
+                           ressources_commands.modifier_message(channel_id, rf"""❌| An error has occured:
 ```py
 {e}
 ```""", dernier_message_id)
@@ -421,7 +427,7 @@ def detecter_message():
                   if len(words) > 1:
                         nombre_messages = int(words[1])
                   else:
-                     nombre_messages = 5
+                     nombre_messages = 2
 
                   if nombre_messages > config_commands.max_clear:
                       ressources_commands.envoyer_message(channel_id, f"{fr_en_commands.clear_fail[config.langue]} {config_commands.max_clear}")

@@ -18,6 +18,9 @@ prefix = "-"
 # fr: Commande danger. (modifie tout les messages auquel le selfbot a répondu.)
 # en: Alert command. (edit all messages to which the selfbot has replied.)
 commande_aled = "danger"
+# fr: Commande qui stoppera le SelfBot.
+# en: Use this command to stop the SelfBot.
+stop_command = "stop"
 
 
 """CONFIG COMMANDES"""

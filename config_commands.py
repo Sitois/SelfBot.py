@@ -50,7 +50,7 @@ commande_ai = "ai"
 # fr: Supprime toutes les conversations avec l'IA.
 commande_ia_clear = "suppr"
 # fr: Si vous possédez Nitro entrez ici 3900, si vous ne possédez pas nitro, entrez ici 1900.
-# en: If you have Nitro, enter here 3900, if not enter here 1900.
+# en: If you have Nitro, enter here 3900. If not, enter here 1900.
 is_nitro = 3900
 # fr: Identifiants et mot de passe pour la commande -ai.
 # en: Email and Password for the ai command.
@@ -71,7 +71,7 @@ token_to_id = "tok"
 # en: Enable NitroSniper (True = yes and False = no)
 nitro_toggle = False # True / False
 # fr: Salon où le Nitro sera envoyé. (il est recommendé d'entrer un salon privé (mp / dm))
-# en: Channel ID for the Nitro Sniper. (recommended: an dm channel id.)
+# en: Channel ID for the Nitro Sniper. (recommended: a dm channel id.)
 notifier_channel_id = ""
 # en: Notifier Account Token
 # fr: Token du compte notificateur.

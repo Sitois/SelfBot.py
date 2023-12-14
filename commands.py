@@ -363,7 +363,8 @@ def detecter_message():
   
   ☣️| __**DANGER ZONE:**__
   Danger Command: `{config_commands.prefix}{config_commands.commande_aled}`
-  Eval Command: `{config_commands.prefix}{config_commands.eval_command}`,  IsEnabled: `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.eval_toggle == True else f"{fr_en_commands.false_bool[config.langue]}"}`''', dernier_message_id)
+  Eval Command: `{config_commands.prefix}{config_commands.eval_command}`,  IsEnabled: `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.eval_toggle == True else f"{fr_en_commands.false_bool[config.langue]}"}`
+  **Stop Command:** `{config_commands.prefix}{config_commands.stop_command}`''', dernier_message_id)
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.commande_ia_clear}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id) 

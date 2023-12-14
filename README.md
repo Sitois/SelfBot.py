@@ -20,9 +20,11 @@
 
 2. [🗒️| Utilisation](#🗒️-utilisation)
 
-3. [🟢| Statut du Projet](#🟢-statut-du-projet)
+3. [🌟| Contenu](#🌟-contenu)
 
-4. [🫂| Contribuer au Projet](#🫂-comment-contribuer-au-projet)
+4. [🟢| Statut du Projet](#🟢-statut-du-projet)
+
+5. [🫂| Contribuer au Projet](#🫂-comment-contribuer-au-projet)
 
 ## 💾| Installation
 Téléchargez la dernière version du SelfBot.
@@ -30,10 +32,20 @@ Lancer ```main.py```.  Les modules nécessaires se téléchargeront automatiquem
 
 ## 🗒️| Utilisation
 ### Control Account Part :
-Rendez-vous dans le fichier ```config.py```, entrez un token humain, choisissez une langue (fr / en) ; et configurez le reste. Lancez ```main.py```.
+Rendez-vous dans le fichier ```config.py```, entrez un token humain, choisissez une langue __(fr / en)__ ; et __configurez ```main_path```__. Lancez ```main.py```.
 
 ### Command Part :
-Rendez-vous dans le fichier ```config_commands.py```, entrez le token et l'ID ; configurez le reste. Lancez ```main.py```.
+Rendez-vous dans le fichier ```config_commands.py```, __entrez le token et l'ID__; configurez le reste. Lancez ```main.py```.
+
+## 🌟| Contenu:
+### Control Account Part
+* Simuler l'écriture dans un salon,
+* Envoyer un message,
+* Customiser son statut,
+* Changer de statut,
+* Envoyer un Fake Nitro.
+### Command Part
+* **See Help Command**
 
 ## 🟢| Statut du Projet:
 🟢| Encore mis à jour régulièrement.

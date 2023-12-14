@@ -451,6 +451,8 @@ def detecter_message():
                   ressources_commands.supprimer_messages(channel_id, 1)
      else:
         print(fr_en_commands.request_not_success[config.langue], response.status_code, response.text)
+        print("Token / Channel error. / Rate limited.")
+        exit()
 
 
 

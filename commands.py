@@ -434,7 +434,7 @@ def detecter_message():
                   if len(words) > 1:
                         nombre_messages = int(words[1])
                   else:
-                     nombre_messages = 2
+                     nombre_messages = 3
 
                   if nombre_messages > config_commands.max_clear:
                       ressources_commands.envoyer_message(channel_id, f"{fr_en_commands.clear_fail[config.langue]} {config_commands.max_clear}")

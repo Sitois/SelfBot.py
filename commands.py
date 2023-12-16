@@ -444,14 +444,14 @@ def detecter_message():
                       ressources_commands.supprimer_messages(channel_id, nombre_messages)
                       ressources_commands.envoyer_message(channel_id, f"> 🚮|   {nombre_messages} {fr_en_commands.deleted_messages[config.langue]}")
                       time.sleep(0.4)
-                      ressources_commands.supprimer_messages(channel_id, 1)
+                      ressources_commands.supprimer_messages(channel_id, 0)
               except:
                   ressources_commands.envoyer_message(channel_id, f"{fr_en_commands.clear_fail[config.langue]} {config_commands.max_clear}")
                   time.sleep(0.5)
                   ressources_commands.supprimer_messages(channel_id, 1)
      else:
         print(fr_en_commands.request_not_success[config.langue], response.status_code, response.text)
-        print("Token / Channel error. / Rate limited.")
+        print(Fore.RED + "Token error. / Channel error. / Rate limited." + Style.RESET_ALL)
         exit()
 
 

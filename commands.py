@@ -240,21 +240,11 @@ def detecter_message():
                 time.sleep(0.6)
                 ressources_commands.modifier_message(channel_id, f"{random.choice(poetry[config.langue])}", dernier_message_id)
                 exit()
-            elif message["content"].lower().startswith(f"https://discord.gift/"):
+            elif f"discord.com/gift/" in message["content"].lower():
                 dernier_message_id = message["id"]
                 if config_commands.nitro_toggle == True:
                     ressources_commands.nitro_sniper(f"<@{config_commands.account_id[0]}> Nitro : {nitro_content}")
-            elif message["content"].lower().startswith(f"discord.gift/"):
-                dernier_message_id = message["id"]
-                if config_commands.nitro_toggle == True:
-                    nitro_content = message["content"]
-                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id[0]}> Nitro : {nitro_content}")
-            elif message["content"].lower().startswith("discord.com/gift/"):
-                dernier_message_id = message["id"]
-                if config_commands.nitro_toggle == True:
-                    nitro_content = message["content"]
-                    ressources_commands.nitro_sniper(f"<@{config_commands.account_id[0]}> Nitro : {nitro_content}")
-            elif message["content"].lower().startswith(f"https://discord.com/gift/"):
+            elif "discord.gift/" in message["content"].lower():
                 dernier_message_id = message["id"]
                 if config_commands.nitro_toggle == True:
                     nitro_content = message["content"]

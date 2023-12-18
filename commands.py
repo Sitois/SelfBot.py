@@ -130,7 +130,7 @@ else:
 
 
 if config_commands.nitro_toggle == True and config_commands.notifier_channel_id == "":
-    config_commands.CHANNEL_ID = input(Fore.LIGHTCYAN_EX + fr_en_commands.info_nitro[config.langue])
+    config_commands.notifier_channel_id = input(Fore.LIGHTCYAN_EX + fr_en_commands.info_nitro[config.langue])
     Style.RESET_ALL
 else:
     1 + 1

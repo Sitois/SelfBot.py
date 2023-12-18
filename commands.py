@@ -393,16 +393,17 @@ def detecter_message():
             elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.commande_ai}") and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
+                # AI CONFIGURATION
                 sign = Login(config_commands.hug_chat_email, config_commands.hug_chat_password)
                 cookies = sign.login()
                 chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
-                ai_ask = message["content"][len(f"{config_commands.prefix}{config_commands.commande_ai}"):]
+                ai_ask = message["content"][len(f"{config_commands.prefix}{config_commands.commande_ai} "):]
                 ressources_commands.modifier_message(channel_id, f"⌚| wait...", dernier_message_id)
-                query_result = chatbot.query(f"{ai_ask}")
+                query_result = chatbot.query(f"Question: {ai_ask}. You MUST answer entirely in {config_commands.language_ai} with a maximum of {config_commands.is_nitro} characters. You MUST anwser normally to the question (without specifying the characters limit.)")
                 ressources_commands.modifier_message(channel_id, fr"""❓| Question: {ai_ask}
 ✅| Réponse: {query_result}""", dernier_message_id)
                 if config_commands.debug_mode == True:
-                    ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")    
+                    ressources_commands.notifier(f"<@{config_commands.account_id}> command:  {nitro_content}")    
             elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.commande_ai}") and not message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 if config_commands.ai_for_all == True:

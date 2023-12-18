@@ -166,7 +166,7 @@ def detecter_message():
             if message["content"].lower() == f"{config_commands.prefix}{config_commands.cat_command}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
-                ressources_commands.modifier_message(channel_id, cat_image_url, dernier_message_id)
+                ressources_commands.send_cat_image(channel_id, dernier_message_id)
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.nitro_command}" and message["author"]["id"] in config_commands.account_id:

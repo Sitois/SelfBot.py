@@ -8,13 +8,16 @@ commands_token = ""
 account_id = [""]
 # fr: ID du salon par défaut (vous pourrez ajouter d'autre salon en fesant: add [salon_id])
 # en: Default Command Channel ID (you can add other channel with the -add [channel_id] command.)
-CHANNEL_ID = "" # Laisser vide pour avoir la demande au démarrage.
+CHANNEL_ID = "" # fr: Laisser vide pour avoir la demande au démarrage. / en: Leave empty to receive request at startup.
 add_channel = "add" # fr: Commande pour ajouter un salon avec son ID. / en: Add Channel Command.
 del_channel = "del" # fr: Commande pour supprimer le dernier salon ajouté. / en: Delete Channel Command (Delete the last channel)
 list_channel = "list" # fr: Comamnde pour voir la liste des salons. / en: Channel List Command
 # fr: Prefix des commandes
 # en: Commands Prefix
 prefix = "-"
+# fr: Commande set prefix (changera le prefix du SelfBot)
+# en: Set prefix command (change the prefix of the SelfBot)
+set_prefix_command = "setprefix"
 # fr: Commande danger. (modifie tout les messages auquel le selfbot a répondu.)
 # en: Alert command. (edit all messages to which the selfbot has replied.)
 commande_aled = "danger"

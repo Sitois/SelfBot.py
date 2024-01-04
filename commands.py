@@ -94,46 +94,29 @@ poetry = {
 
 print(Fore.LIGHTRED_EX + fr_en_commands.account_id_info[config.langue], config_commands.account_id, Fore.LIGHTCYAN_EX, fr_en_commands.info_channel[config.langue], config_commands.CHANNEL_ID, Style.RESET_ALL)
 
-requests.get('https://api.thecatapi.com/v1/images/search')
-
-if requests.get('https://api.thecatapi.com/v1/images/search').status_code == 200:
-      data = json.loads(requests.get('https://api.thecatapi.com/v1/images/search').text)
-      if len(data) > 0:
-          cat_image_url = data[0]['url']
-          print("Cat command URL :", cat_image_url)
-      else:
-          print(fr_en_commands.cat_error[config.langue])
-else:
-       print(fr_en_commands.request_not_success[config.langue], requests.get('https://api.thecatapi.com/v1/images/search').text, requests.get('https://api.thecatapi.com/v1/images/search').status_code)
-
-cat_image_url = data[0]['url']
 
 
 if config_commands.commands_token == "":
     config_commands.commands_token = input(Fore.LIGHTYELLOW_EX + "Token :")
     Style.RESET_ALL
-else:
-    1 + 1
+
 
 if config_commands.account_id == "":
     config_commands.account_id = input(Fore.LIGHTRED_EX + "ID :")
     Style.RESET_ALL
-else:
-    1 + 1
+
 
 
 if config_commands.CHANNEL_ID == "":
     config_commands.CHANNEL_ID = input(Fore.LIGHTCYAN_EX + fr_en_commands.info_channel[config.langue])
     Style.RESET_ALL
-else:
-    1 + 1
+
 
 
 if config_commands.nitro_toggle == True and config_commands.notifier_channel_id == "":
     config_commands.notifier_channel_id = input(Fore.LIGHTCYAN_EX + fr_en_commands.info_nitro[config.langue])
     Style.RESET_ALL
-else:
-    1 + 1
+
 
 print(Fore.LIGHTGREEN_EX + "---------")
 print(Fore.LIGHTYELLOW_EX, "Logs :")
@@ -206,7 +189,7 @@ def detecter_message():
                 id = message["content"][len(f"{config_commands.prefix}{config_commands.token_to_id}"):]
                 id = id.strip()
                 encode_text = base64.b64encode(id.encode('utf-8'))
-                ressources_commands.modifier_message(channel_id, f"🌠| Résultat: `{encode_text.strip()}`", dernier_message_id)
+                ressources_commands.modifier_message(channel_id, f"🌠| Start of {id}'s token: `{encode_text.strip()}`", dernier_message_id)
                 if config_commands.debug_mode == True:
                     ressources_commands.notifier(f"<@{config_commands.account_id}> command: : {nitro_content}")
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.commande_quatre}" and message["author"]["id"] in config_commands.account_id:
@@ -249,6 +232,13 @@ def detecter_message():
                 if config_commands.nitro_toggle == True:
                     nitro_content = message["content"]
                     ressources_commands.nitro_sniper(f"<@{config_commands.account_id[0]}> Nitro : {nitro_content}")
+            elif message["content"].lower().startswith(f"{config_commands.prefix}setprefix") and message["author"]["id"] in config_commands.account_id:
+                dernier_message_id = message["id"]
+                message_id_log.append(dernier_message_id)
+                contenu = message["content"].split()
+                new_prefix = contenu[1]
+                config_commands.prefix = new_prefix
+                ressources_commands.modifier_message(channel_id, f"🟢| Nouveau prefix: **{config_commands.prefix}**", dernier_message_id)
             elif message["content"].lower().startswith(f"{config_commands.prefix}{config_commands.add_channel}") and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
@@ -316,19 +306,19 @@ def detecter_message():
                 ressources_commands.modifier_message(channel_id, rf'''☄ __**SelfBot.py, *Clint(Self)Bot*  :**__ ☄
   ☄ "{random.choice(poetry[config.langue])}" ☄
   
-  🏮| __**GENERAL:**__: `{config_commands.prefix}{config_commands.general_help_command}`
+  🏮| __**GENERAL:**__ `{config_commands.prefix}{config_commands.general_help_command}`
   🌠| __**{fr_en_commands.part_two_help[config.langue]}:**__ `{config_commands.prefix}{config_commands.perso_help_command}`
   ☣️| __**DANGER ZONE:**__ `{config_commands.prefix}{config_commands.danger_help_command}`''', dernier_message_id)
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.general_help_command}" and message["author"]["id"] in config_commands.account_id:
                 dernier_message_id = message["id"]
                 message_id_log.append(dernier_message_id)
-                ressources_commands.modifier_message(channel_id, rf'''☄ __**SelfBot.py, *Clint(Self)Bot*  :**__ ☄:
+                ressources_commands.modifier_message(channel_id, rf'''☄ __**SelfBot.py, *Clint(Self)Bot*  :**__ ☄
                                                      
   🏮| __**GENERAL:**__
-  __Prefix:__ `{config_commands.prefix}`,  {fr_en_commands.ai_for_all_boo[config.langue]}: `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.ai_for_all == True else f'{fr_en_commands.false_bool[config.langue]}'}`
+  __Prefix:__ `{config_commands.prefix}`, __SetPrefix:__ `{config_commands.prefix}{config_commands.set_prefix_command}`
   __**Add_Channel:**__ `{config_commands.prefix}{config_commands.add_channel}`, Channel Counter: `{len(list_custom_channel)}`, Channel List: `{config_commands.prefix}{config_commands.list_channel}`, Delete Channel: `{config_commands.prefix}{config_commands.del_channel}`
   __**Nitro Sniper**__ : `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.nitro_toggle == True else f'{fr_en_commands.false_bool[config.langue]}'}` ,  **{fr_en_commands.info_channel[config.langue]} <#{config_commands.notifier_channel_id}>**
-  __**{fr_en_commands.ai_command_help[config.langue]}:**__ `{config_commands.prefix}{config_commands.commande_ai}`,  IsNitro : `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.is_nitro == 3900 else f'{fr_en_commands.false_bool[config.langue]}'}`
+  __**{fr_en_commands.ai_command_help[config.langue]}:**__ `{config_commands.prefix}{config_commands.commande_ai}`,  IsNitro : `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.is_nitro == 3900 else f'{fr_en_commands.false_bool[config.langue]}'}`,   {fr_en_commands.ai_for_all_boo[config.langue]}: `{f"{fr_en_commands.true_bool[config.langue]}" if config_commands.ai_for_all == True else f'{fr_en_commands.false_bool[config.langue]}'}`.
   __**{fr_en_commands.clear_ai_help[config.langue]} :**__ `{config_commands.prefix}{config_commands.commande_ia_clear}`
   __**Clear:**__ `{config_commands.prefix}{config_commands.clear_command}` (__Max:__ __{config_commands.max_clear}__)''', dernier_message_id)
             elif message["content"].lower() == f"{config_commands.prefix}{config_commands.perso_help_command}" and message["author"]["id"] in config_commands.account_id:

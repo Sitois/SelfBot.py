@@ -4,7 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Sitois/SelfBot.py.svg)](https://github.com/Sitois/SelfBot.py/stargazers)
 [![GitHub watchers](https://img.shields.io/github/watchers/Sitois/SelfBot.py.svg)](https://github.com/Sitois/SelfBot.py/watchers)
 # 🌠| Clint (Self) Bot
-### A discord SelfBot that has been created to upgrade the user experience (no raid or spam commands). (Discord SelfBot are not allowed by Discord and can easily ban your account. Please use for educationnal purpose only).
+### A discord SelfBot that has been created to upgrade the user experience (no raid commands). 
 
 <div align="center">
   <img src="https://media.discordapp.net/attachments/1155452222713364600/1180883350685241445/a8V7i28.png?ex=657f0a52&is=656c9552&hm=1f34222d65c9d2edee1af0fa6d7a7e3e95eb24d0e2674a628cf1dd58b4c164d3&=&quality=lossless" alt="SelfBot Main Menu" width="" height="">
@@ -16,21 +16,29 @@
 
 ## 📒| Table des matières
 
-1. [💾| Installation](#💾-installation)
+1. [⛔| Disclaimer](#⛔-disclaimer)
 
-2. [🗒️| Utilisation](#🗒️-utilisation)
+2. [💾| Installation](#💾-installation)
 
-3. [🌟| Contenu](#🌟-contenu)
+3. [🔧| Configuration](#🔧-configuration)
 
-4. [🟢| Statut du Projet](#🟢-statut-du-projet)
+4. [🌟| Contenu](#🌟-contenu)
 
-5. [🫂| Contribuer au Projet](#🫂-comment-contribuer-au-projet)
+5. [🟢| Statut du Projet](#🟢-statut-du-projet)
+
+6. [🫂| Contribuer au Projet](#🫂-comment-contribuer-au-projet)
+
+
+## ⛔| Disclaimer
+```en:``` **Discord SelfBot are not allowed by Discord and can easily ban your account. Please use for educationnal purpose only.**
+
+```fr:``` **Utiliser un SelfBot Discord n'est pas autorisé par Discord et peux facilement bannir votre compte. Merci de l'utiliser seulement pour des raisons éducatives.**
 
 ## 💾| Installation
 Téléchargez la dernière version du SelfBot.
 Lancer ```main.py```.  Les modules nécessaires se téléchargeront automatiquement au démarrage s'il ne sont pas présent.
 
-## 🗒️| Utilisation
+## 🔧| Configuration
 ### Control Account Part :
 Rendez-vous dans le fichier ```config.py```, entrez un token humain, choisissez une langue __(fr / en)__ ; et __configurez ```main_path```__. Lancez ```main.py```.
 

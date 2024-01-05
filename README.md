@@ -4,7 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Sitois/SelfBot.py.svg)](https://github.com/Sitois/SelfBot.py/stargazers)
 [![GitHub watchers](https://img.shields.io/github/watchers/Sitois/SelfBot.py.svg)](https://github.com/Sitois/SelfBot.py/watchers)
 # 🌠| Clint (Self) Bot
-### A discord SelfBot that has been created to upgrade the user experience (no raid commands). 
+### A discord SelfBot that has been created to upgrade the user experience **(no raid commands)**. 
 
 <div align="center">
   <img src="https://media.discordapp.net/attachments/1155452222713364600/1180883350685241445/a8V7i28.png?ex=657f0a52&is=656c9552&hm=1f34222d65c9d2edee1af0fa6d7a7e3e95eb24d0e2674a628cf1dd58b4c164d3&=&quality=lossless" alt="SelfBot Main Menu" width="" height="">

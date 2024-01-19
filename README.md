@@ -66,7 +66,8 @@ Rendez-vous dans le fichier ```config_commands.py```, __entrez le token et l'ID_
 * **See Help Command**
 
 ## 🟢| Statut du Projet:
-🟢| Encore mis à jour régulièrement.
+🔴| Projetc is no longer maintened !
+🔴| Le projet n'est plus à jour !
 
 ## 🫂| Comment contribuer au Projet:
 🌟 N'oubliez pas de laisser une étoile !

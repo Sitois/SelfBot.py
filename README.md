@@ -4,10 +4,10 @@
 [![GitHub stars](https://img.shields.io/github/stars/Sitois/SelfBot.py.svg)](https://github.com/Sitois/SelfBot.py/stargazers)
 [![GitHub watchers](https://img.shields.io/github/watchers/Sitois/SelfBot.py.svg)](https://github.com/Sitois/SelfBot.py/watchers)
 
-# ⛔ THE SELFBOT PART IS BROKEN AND CAN EASILY BAN YOUR ACCOUNT 
+# ⛔ THE SELFBOT PART IS BROKEN AND CAN EASILY BAN YOUR ACCOUNT (if you want a real selfbot go [here](https://github.com/Sitois/Nuclear))
 # ONLY USE THE ACCOUNT CONTROL PART !
 
-# ⛔ LA PARTIE SELFBOT EST CASSé ET PEU FACILEMENT BANNIR VOTRE COMPTE 
+# ⛔ LA PARTIE SELFBOT EST CASSé ET PEU FACILEMENT BANNIR VOTRE COMPTE  (si vous voulez un vrai selfbot c'est [ici](https://github.com/Sitois/Nuclear))
 # UTILISEZ SEULEMENT LA PARTIE ACCOUNT CONTROL !
 
 
